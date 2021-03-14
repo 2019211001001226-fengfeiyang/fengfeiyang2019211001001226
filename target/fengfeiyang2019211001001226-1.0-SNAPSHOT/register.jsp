@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<a href="http://www.ecjtu.jx.cn/">go to ecjtu</a>
+
 <form><!--what is method when we use form?--><!--its GET , why?-->
     UserName :<input type="text" name="username"><br/>
     password :<input type="text" name="password"><br/>
