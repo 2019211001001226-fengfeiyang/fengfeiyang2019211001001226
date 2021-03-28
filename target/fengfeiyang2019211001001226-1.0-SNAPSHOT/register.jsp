@@ -12,11 +12,12 @@
 </head>
 <body>
 
-<form><!--what is method when we use form?--><!--its GET , why?-->
+<form method="post" action="register">
     UserName :<input type="text" name="username"><br/>
     password :<input type="text" name="password"><br/>
     Email :<input type="text" name="email"><br/>
-    Date of Birth :<input type="text" name="Date of Birth"><br/>
+    Gender:<input type="radio" name="gender" value="male">Male<input type="radio" name="gender" value="female">Female<br/>
+    Date of Birth :<input type="text" name="birthDate"><br/>
     <input type="submit" value="Register"/>
 </form>
 </body>
