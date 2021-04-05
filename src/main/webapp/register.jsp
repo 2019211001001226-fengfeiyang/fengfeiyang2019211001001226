@@ -16,4 +16,4 @@
     <input type="submit" value="Register"/>
 </form>
 
-<%@include file="footer.jsp"
+<%@include file="footer.jsp"%>
