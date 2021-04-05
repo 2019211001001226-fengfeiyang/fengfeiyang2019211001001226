@@ -23,8 +23,10 @@ public class LoginServlet extends HttpServlet {
         String name=  request.getParameter("name");
         String id=  request.getParameter("id");
         PrintWriter writer = response.getWriter();
-        writer.println("<br>Name:"+name);
-        writer.println("<br>ID:"+id);
+
+
+        writer.println("Login Success!!!");
+        writer.println("Welcome,"+name);
         writer.close();
     }
 }
