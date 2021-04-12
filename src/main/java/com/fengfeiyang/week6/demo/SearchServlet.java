@@ -25,6 +25,9 @@ public class SearchServlet extends HttpServlet {
             }else if(search.equals("google")){
                 response.sendRedirect("https://www.google.cn/search?q=" +txt);
             }
+            else if(search.equals("sogou")){
+                response.sendRedirect("https://www.sogou.com/web?query=" +txt);
+            }
         }
     }
 

@@ -7,6 +7,7 @@
         <option value= "baidu">Baidu</option>
         <option value= "bing">Bing</option>
         <option value= "google">Google</option>
+        <option value= "sogou">sogou</option>
         </select>
             <input type="submit" value="Search"/>
 </form>
