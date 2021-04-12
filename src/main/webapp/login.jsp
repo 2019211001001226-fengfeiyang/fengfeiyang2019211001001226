@@ -6,6 +6,13 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@include file="header.jsp"%>
+<h1> Login</h1>
+<%
+    if(!(request.getAttribute("message") == null))
+    {
+        out.println("<h3 style = 'color:yellow'>"+request.getAttribute("message")+"</h3>");
+    }
+%>
     <form method="post" action="login">
         Name :<input type="text" name="name"><br>
         ID:<input type="text" name="password"><br>
