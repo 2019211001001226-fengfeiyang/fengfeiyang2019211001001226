@@ -11,7 +11,7 @@
         </select>
             <input type="submit" value="Search"/>
     <br/>
-    <a href="HelloServlet">HelloServlet</a>
+    <a href="hello-servlet">HelloServlet</a>
     <br/>
 
 </form>
