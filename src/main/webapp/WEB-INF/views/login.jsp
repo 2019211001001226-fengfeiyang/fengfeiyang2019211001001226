@@ -10,7 +10,7 @@
 <%
     if(!(request.getAttribute("message") == null))
     {
-        out.println("<h3 style = 'color:yellow'>"+request.getAttribute("message")+"</h3>");
+        out.println("<h3 style = 'color:blue'>"+request.getAttribute("message")+"</h3>");
     }
 %>
     <form method="post" action="login">

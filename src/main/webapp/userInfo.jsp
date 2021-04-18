@@ -1,3 +1,4 @@
+<%@ page import="com.fengfeiyang.model.User" %>
 <%--
   Created by IntelliJ IDEA.
   User: 28353
@@ -9,6 +10,9 @@
 
 <%@page  contentType="text/html;charset=UTF-8" language="java"%>
 <%@include file="header.jsp" %>
+<%
+    User user = (User)request.getAttribute("user");
+%>
 <h2>User Info</h2>
 
 <table border="1" >

@@ -25,11 +25,6 @@
 
 
 
-    String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    //        String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
-    //        String username="sa";
-    //        String password="123456";
-
 
     <servlet-mapping>
         <servlet-name>ConfigDemoServlet</servlet-name>
@@ -71,7 +66,10 @@
         <param-name>Password</param-name>
         <param-value>123456</param-value>
     </context-param>
-
-
-
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
+    <welcome-file-list>
+        <welcome-file>home</welcome-file>
+    </welcome-file-list>
 </web-app>

@@ -37,7 +37,7 @@ public class JDBCDemoServlet extends HttpServlet {
         try {
             Class.forName(driver);
             con= DriverManager.getConnection(url,username,password);
-            System.out.println("init()-->"+con);
+            //System.out.println("init()-->"+con);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
             //System.out.println("连接数据库失败！");
