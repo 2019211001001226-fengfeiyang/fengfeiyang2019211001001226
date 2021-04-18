@@ -14,8 +14,8 @@
     }
 %>
     <form method="post" action="login">
-        Name :<input type="text" name="name"><br>
-        ID:<input type="text" name="password"><br>
+        Name :<input type="text" name="username"><br>
+        Password:<input type="text" name="password"><br>
         <input type="submit" value="Login"/>
     </form>
 
