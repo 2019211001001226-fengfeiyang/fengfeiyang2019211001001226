@@ -4,7 +4,16 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
 
+    <servlet>
 
+        <servlet-name>updateUser</servlet-name>
+        <jsp-file>/WEB-INF/views/updateUser.jsp</jsp-file>
+    </servlet>
+    <servlet-mapping>
+
+        <servlet-name>updateUser</servlet-name>
+        <url-pattern>/updateUser.jsp</url-pattern>
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>fengfeiyang</servlet-name>
@@ -69,7 +78,5 @@
     <welcome-file-list>
         <welcome-file>home</welcome-file>
     </welcome-file-list>
-    <welcome-file-list>
-        <welcome-file>home</welcome-file>
-    </welcome-file-list>
+
 </web-app>

@@ -10,7 +10,7 @@
     }
 --%>
 <%
-    User a = (User)request.getAttribute("user");
+
     if(!(request.getAttribute("message") == null)) {
         out.println(request.getAttribute("message"));
     }
@@ -20,11 +20,7 @@
 %>
 <h1>UserInfo</h1>
 <table>
-    <tr><td>Username:</td>  <td><%=a.getUsername()%> </td></tr>
-    <tr><td>Password:</td>  <td><%=a.getPassword()%> </td></tr>
-    <tr><td>Email:</td>     <td><%=a.getEmail()%>    </td></tr>
-    <tr><td>Gender:</td>    <td><%=a.getGender()%>   </td></tr>
-    <tr><td>Birthdate:</td> <td><%=a.getBirthDate()%></td></tr>
+
     <tr><td>Username:</td>  <td><%=u.getUsername()%> </td></tr>
     <tr><td>Password:</td>  <td><%=u.getPassword()%> </td></tr>
     <tr><td>Email:</td>     <td><%=u.getEmail()%>    </td></tr>
