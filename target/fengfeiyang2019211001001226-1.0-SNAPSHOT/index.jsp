@@ -10,5 +10,9 @@
         <option value= "sogou">sogou</option>
         </select>
             <input type="submit" value="Search"/>
+
+    <br/>
+    <a href="hello-servlet">HelloServlet</a>
+    <br/>
 </form>
 <%@include file="footer.jsp" %>
