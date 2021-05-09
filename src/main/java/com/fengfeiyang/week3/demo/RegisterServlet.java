@@ -14,7 +14,7 @@ import java.io.PrintWriter;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 
-@WebServlet(name = "RegisterServlet",value="/Register")
+@WebServlet(name = "RegisterServlet",value="/register")
 public class RegisterServlet extends HttpServlet {
     Connection con = null;
     public void init() throws ServletException {
@@ -42,10 +42,11 @@ public class RegisterServlet extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String email = request.getParameter("email");
-        String gender = request.getParameter("sex");
-        String birth = request.getParameter("birth");
+        String gender = request.getParameter("gender");
+        String birth = request.getParameter("birthdate");
         //String birth="1989-11-23";
-        java.sql.Date birthdate = java.sql.Date.valueOf(birth);
+
+       java.sql.Date birthdate = java.sql.Date.valueOf(birth);
         /*
         out.println("<html><body>");
         System.out.println("-->I am in doPost()");
@@ -101,11 +102,11 @@ public class RegisterServlet extends HttpServlet {
             }
             out.print("</table>");
             */
-            request.setAttribute("rsname",rs);
+           request.setAttribute("rsname",rs);
             request.getRequestDispatcher("userList.jsp").forward(request,response);
             System.out.println("I am in RegisterServlet -->doPost()--> after forward()");
 
-            response.sendRedirect("Login.jsp");
+            response.sendRedirect("login.jsp");
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -113,7 +114,7 @@ public class RegisterServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request,response);
+        request.getRequestDispatcher("WEB-INF/views/register.jsp").forward(request,response);
     }
 
     public void destroy() {
