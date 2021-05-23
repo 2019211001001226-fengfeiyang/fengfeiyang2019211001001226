@@ -63,38 +63,37 @@ public class Category {
                 '}';
     }
 
-    public static List<Category> findAllCategory(Connection con) throws SQLException {
-        String sql = "select * from Category";
-        List<Category> list = new ArrayList<Category>();
-        try {
-            PreparedStatement pt = con.prepareStatement(sql);
-            ResultSet rs = pt.executeQuery();
-            while(rs.next()) {
-                Category c = new Category();
-                c.setCategoryId(rs.getInt("CategoryId"));
-                c.setCategoryName(rs.getString("CategoryName"));
-                c.setDescription(rs.getString("Description"));
-                //c.setActive(rs.getBoolean("Active"));
+    public static List<Category> findAllCategory(Connection con) {
+        String dbRequire="select * from Category";
+        List<Category> list=new ArrayList<Category>();
+        try{
+            PreparedStatement st=con.prepareStatement(dbRequire);
+            ResultSet resultDb=st.executeQuery();
+            while(resultDb.next()) {
+                Category c=new Category();
+                c.setCategoryId(resultDb.getInt("CategoryId"));
+                System.out.println(resultDb.getInt("CategoryId"));
+                c.setCategoryName(resultDb.getString("CategoryName"));
+                c.setDescription(resultDb.getString("Description"));
                 list.add(c);
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
+        }catch (Exception e) {
+            System.out.println(e);
         }
         return list;
     }
-
-    public static String findByCategory(Connection con,int categoryId) {
-        String categoryName = null;
-        try {
-            String queryString = "select Category from Category where CategoryId=?";
-            PreparedStatement statement = con.prepareStatement(queryString);
-            statement.setInt(1,categoryId);
-            ResultSet resultSet = statement.executeQuery();
-            while(resultSet.next()) {
-                categoryName = resultSet.getString("CategoryName");
+    public static  String findByCategoryId(Connection con,int categoryId) throws SQLException {
+        String categoryName=null;
+        try{
+            String dbRequire="select CategoryName from Category where CategoryId=?";
+            PreparedStatement st=con.prepareStatement(dbRequire);
+            st.setInt(1,categoryId);
+            ResultSet resultDb=st.executeQuery();
+            if(resultDb.next()) {
+                categoryName=resultDb.getString("CategoryName");
             }
-        } catch (Exception e) {
-            e.printStackTrace();
+        }catch (Exception e) {
+            System.out.println(e);
         }
         return categoryName;
     }

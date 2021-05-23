@@ -14,7 +14,6 @@ import javax.servlet.http.Part;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -23,33 +22,15 @@ import java.util.List;
 public class AddProductServlet extends HttpServlet {
     private Connection con = null;
     public void init() {
-        String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
-        String username="sa";
-        String password="123456";
-
-
-
-        try {
-            Class.forName(driver);
-            con= DriverManager.getConnection(url,username,password);
-            System.out.println("init()-->"+con);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            System.out.println("3连接数据库失败！");
-        }
+        con = (Connection) getServletContext().getAttribute("con");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Category category = new Category();
-        try {
-            List<Category> categoryList = category.findAllCategory(con);
-            request.setAttribute("categoryList",categoryList);
-            String path = "/WEB-INF/views/admin/addProduct.jsp";
-            request.getRequestDispatcher(path).forward(request,response);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        List<Category> categoryList = category.findAllCategory(con);
+        request.setAttribute("categoryList",categoryList);
+        String path = "/WEB-INF/views/admin/addProduct.jsp";
+        request.getRequestDispatcher(path).forward(request,response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

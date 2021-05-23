@@ -19,6 +19,7 @@ public interface IProductDao {
 	 * Delete a product by productId
 	 * @return int
 	 */
+
 	public int delete(Integer productId, Connection con) throws SQLException;
 	/**
 	 *	Update a product by productId
