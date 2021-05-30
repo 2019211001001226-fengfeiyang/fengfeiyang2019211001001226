@@ -22,7 +22,7 @@ import java.util.List;
 public class AddProductServlet extends HttpServlet {
     private Connection con = null;
     public void init() {
-        con = (Connection) getServletContext().getAttribute("con");
+        con = (Connection) getServletContext().getAttribute("dbConn");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

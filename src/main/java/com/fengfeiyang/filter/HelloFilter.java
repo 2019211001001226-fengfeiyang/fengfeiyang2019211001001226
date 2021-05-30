@@ -7,6 +7,7 @@ import java.io.IOException;
 public class HelloFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
         System.out.println("I am in HelloFilter-->init()");
+
     }
 
     public void destroy() {
@@ -14,7 +15,9 @@ public class HelloFilter implements Filter {
     }
 
     public void doFilter(ServletRequest req, ServletResponse resp, FilterChain chain) throws ServletException, IOException {
+
         System.out.println("I am in HelloFilter-->doFilter()- before servlet(request come here)");
+
         chain.doFilter(req, resp);
         System.out.println("I am in HelloFilter-->doFilter()- after servlet(response come here)");
     }

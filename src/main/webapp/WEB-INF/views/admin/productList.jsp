@@ -1,5 +1,6 @@
 <%@ page import="com.fengfeiyang.model.Category"%>
 <%@ page import="java.sql.Connection" %>
+
 <%@include file="../header.jsp" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
@@ -59,9 +60,14 @@
 						<p>${p.price }</p>
 					</td>
 					<%
+
+
 						com.fengfeiyang.model.Product p = (com.fengfeiyang.model.Product)pageContext.findAttribute("p");
 						int n = p.getCategoryId();
+
+
 						Connection con = (Connection)application.getAttribute("dbConn");
+
 						String catName = Category.findByCategoryId(con,n);
 					%>
 					<td class="cart_quantity"><%=catName %></td>

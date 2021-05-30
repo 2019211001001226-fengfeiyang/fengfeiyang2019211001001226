@@ -93,7 +93,7 @@ public class ProductDao implements  IProductDao{
 
     @Override
     public Product findById(Integer productId, Connection con)throws SQLException{
-        String queryString = "select * from Product where Productld= ?";
+        String queryString = "select * from Product where ProductId= ?";
         PreparedStatement pt = con.prepareStatement(queryString);
         pt.setInt(1, productId);
         ResultSet rs = pt.executeQuery();
@@ -102,7 +102,7 @@ public class ProductDao implements  IProductDao{
             product.setProductId(rs.getInt("CategoryId"));
             product.setPrice(rs.getDouble("Price"));
             product.setProductDescription(rs.getString("ProductDescription"));
-            product.setProductId(rs.getInt("Productld"));
+            product.setProductId(rs.getInt("ProductId"));
             product.setProductName(rs.getString("ProductName"));
         }
         return product;
@@ -121,7 +121,7 @@ public class ProductDao implements  IProductDao{
                 product.setCategoryId(rs.getInt("CategoryId"));
                 product.setPrice(rs.getDouble("Price"));
                 product.setProductDescription(rs.getString("ProductDescription"));
-                product.setProductId(rs.getInt("Productld"));
+                product.setProductId(rs.getInt("ProductId"));
                 product.setProductName(rs.getString("ProductName"));
                 list.add(product);
 
@@ -146,7 +146,7 @@ public class ProductDao implements  IProductDao{
                 product.setCategoryId(rs.getInt("CategoryId"));
                 product.setPrice(rs.getDouble("Price"));
                 product.setProductDescription(rs.getString("ProductDescription"));
-                product.setProductId(rs.getInt("Productld"));
+                product.setProductId(rs.getInt("ProductId"));
                 product.setProductName(rs.getString("ProductName"));
                 list.add(product);
 
@@ -169,7 +169,7 @@ public class ProductDao implements  IProductDao{
                 product.setCategoryId(rs.getInt("CategoryId"));
                 product.setPrice(rs.getDouble("Price"));
                 product.setProductDescription(rs.getString("ProductDescription"));
-                product.setProductId(rs.getInt("Productld"));
+                product.setProductId(rs.getInt("ProductId"));
                 product.setProductName(rs.getString("ProductName"));
                 list.add(product);
 
@@ -193,7 +193,7 @@ public class ProductDao implements  IProductDao{
                 product.setCategoryId(rs.getInt("CategoryId"));
                 product.setPrice(rs.getDouble("Price"));
                 product.setProductDescription(rs.getString("ProductDescription"));
-                product.setProductId(rs.getInt("Productld"));
+                product.setProductId(rs.getInt("ProductId"));
                 product.setProductName(rs.getString("ProductName"));
                 list.add(product);
 
@@ -208,7 +208,7 @@ public class ProductDao implements  IProductDao{
     public List<Product> getPicture(Integer productId, Connection con) throws SQLException {
         List<Product> list=new ArrayList<Product>();
         try {
-            String queryString = "select Picture from Product where Productld =?";
+            String queryString = "select Picture from Product where ProductId =?";
             PreparedStatement pt = con.prepareStatement(queryString);
             pt.setInt(1,productId);
             ResultSet rs= pt.executeQuery();
@@ -217,7 +217,7 @@ public class ProductDao implements  IProductDao{
                 product.setCategoryId(rs.getInt("CategoryId"));
                 product.setPrice(rs.getDouble("Price"));
                 product.setProductDescription(rs.getString("ProductDescription"));
-                product.setProductId(rs.getInt("Productld"));
+                product.setProductId(rs.getInt("ProductId"));
                 product.setProductName(rs.getString("ProductName"));
                 list.add(product);
 
@@ -231,7 +231,7 @@ public class ProductDao implements  IProductDao{
 
     public byte[] getPictureById(Integer productId, Connection con) throws SQLException {
         byte[] imgByte = null;
-        String sql = "select Picture from  Product where Productld = ?";
+        String sql = "select Picture from  Product where ProductId = ?";
         PreparedStatement pt = con.prepareStatement(sql);
         pt.setInt(1, productId);
         ResultSet rs = pt.executeQuery();

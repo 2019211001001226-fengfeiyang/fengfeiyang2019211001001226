@@ -24,8 +24,8 @@ public class JDBCServletContextListener implements ServletContextListener {
             Con = DriverManager.getConnection(context.getInitParameter("url"),
                     context.getInitParameter("Username"),
                     context.getInitParameter("Password"));
-            context.setAttribute("Con",Con);
-context.setAttribute("Con",Con);
+            context.setAttribute("dbConn",Con);
+
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }

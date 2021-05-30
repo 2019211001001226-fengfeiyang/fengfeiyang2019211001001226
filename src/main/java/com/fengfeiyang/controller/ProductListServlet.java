@@ -18,7 +18,7 @@ public class ProductListServlet extends HttpServlet {
     Connection con = null;
 
     public void init() throws ServletException {
-        String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
+       /* String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
         String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
         String username="sa";
         String password="123456";
@@ -31,8 +31,11 @@ public class ProductListServlet extends HttpServlet {
             System.out.println("init()-->"+con);
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
-            System.out.println("2连接数据库失败！");
-        }
+            System.out.println("3连接数据库失败！");
+        }*/
+        con =(Connection)getServletContext().getAttribute("dbConn");
+
+
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -47,6 +50,7 @@ public class ProductListServlet extends HttpServlet {
             request.setAttribute("productList", productList);
         } catch (SQLException e) {
             e.printStackTrace();
+
         }
         String path = "/WEB-INF/views/admin/productList.jsp";
         request.getRequestDispatcher(path).forward(request, response);
