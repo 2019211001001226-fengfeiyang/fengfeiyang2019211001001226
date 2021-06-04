@@ -25,7 +25,7 @@ public class ShopServlet extends HttpServlet {
         Category category=new Category();
         Connection con = null;
         try {
-            con=(Connection)getServletContext().getAttribute("dbConn");
+             con=(Connection)getServletContext().getAttribute("dbConn");
             List<Category> categoryList=category.findAllCategory(con);
             request.setAttribute("categoryList",categoryList);
             ProductDao productDao =new ProductDao();

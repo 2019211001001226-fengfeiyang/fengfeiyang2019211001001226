@@ -18,7 +18,7 @@ import java.util.List;
 public class ProductDetailsServlet extends HttpServlet {
     Connection con=null;
     public void init() throws ServletException {
-        con=(Connection)getServletContext().getAttribute("dbConn");
+         con=(Connection)getServletContext().getAttribute("dbConn");
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id=request.getParameter("id")!=null?Integer.parseInt(request.getParameter("id")):0;
