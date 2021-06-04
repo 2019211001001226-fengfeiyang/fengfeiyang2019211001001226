@@ -18,21 +18,7 @@ import java.sql.SQLException;
 public class UpdateUserServlet extends HttpServlet {
     Connection con = null;
     public void init() throws ServletException {
-        String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
-        String username="sa";
-        String password="123456";
-
-
-
-        try {
-            Class.forName(driver);
-            con= DriverManager.getConnection(url,username,password);
-            System.out.println("init()-->"+con);
-        } catch (ClassNotFoundException | SQLException e) {
-            e.printStackTrace();
-            System.out.println("2连接数据库失败！");
-        }
+        con=(Connection)getServletContext().getAttribute("dbConn");
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

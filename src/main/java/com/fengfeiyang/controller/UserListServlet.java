@@ -10,7 +10,7 @@ import java.sql.Connection;
 public class UserListServlet extends HttpServlet {
     Connection con = null;
     public void init() throws ServletException{
-        con = (Connection) getServletContext().getAttribute("dbConn");
+         con = (Connection) getServletContext().getAttribute("dbConn");
     }
     public void destroy(){
         super.destroy();

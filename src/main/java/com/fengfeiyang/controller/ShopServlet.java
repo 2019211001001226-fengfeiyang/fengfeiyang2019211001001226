@@ -25,11 +25,7 @@ public class ShopServlet extends HttpServlet {
         Category category=new Category();
         Connection con = null;
         try {
-            String driver="com.microsoft.sqlserver.jdbc.SQLServerDriver";
-            String url="jdbc:sqlserver://localhost:1433;DatabaseName=userdb;";
-            String username="sa";
-            String password="123456";
-            con= DriverManager.getConnection(url,username,password);
+            con=(Connection)getServletContext().getAttribute("dbConn");
             List<Category> categoryList=category.findAllCategory(con);
             request.setAttribute("categoryList",categoryList);
             ProductDao productDao =new ProductDao();

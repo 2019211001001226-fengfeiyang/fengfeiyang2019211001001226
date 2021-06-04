@@ -29,7 +29,7 @@ public class GetImgServlet extends HttpServlet {
         response.setContentType("text/html");
         ProductDao dao = new ProductDao();
         int id = 0;
-        if (request.getParameter("id") != null) {
+          if (request.getParameter("id") != null) {
             id = Integer.parseInt(request.getParameter("id"));
             try {
                 byte[] imgByte = new byte[0];
