@@ -24,11 +24,13 @@
 </ul>
 <%-- todo 1 : run assignement1.jsp  --%>
 <%-- todo 2 : use c:forEach to print list 1,3,5,7,9   --%>
+<h1> c:forEach loog to print list 13579</h1>
 <c:forEach var="i" begin="1" end="9" step="2">
     <li>${i}</li>
 </c:forEach>
 </br></br>
 <%-- todo 3 : use c:forEach to print 2,4,6,8,10   --%>
+<h2> c:forEach loog to print list 246810</h2>
 <c:forEach var="i" begin="2" end="10" step="2">
     <li>${i}</li>
 </c:forEach>
@@ -38,11 +40,14 @@
     pageContext.setAttribute("words", words);
 %>
 <%-- todo 4 : use c:forEach to print all elements of array --%>
+<h2> c:forEach loog to print all elements of array</h2>
 <c:forEach var="i" begin="0" end="9">
     <li>${words[i]}</li>
 </c:forEach>
 </br></br>
+
 <%-- todo 5 : use c:forEach to print "one","three","five","seven","nine"  of array --%>
+<h1> c:forEach loog to print "one","three","five","seven","nine"  of array</h1>
 <c:forEach var="i" begin="0" end="9" step="2">
     <li>${words[i]}</li>
 </c:forEach>
@@ -57,6 +62,7 @@
 %>
 </br></br>
 <%--//todo 7: use c:forEach to print person name :   and persons' dog name : --%>
+<h4> c:forEach loog to print person name :   and persons' dog name :</h4>
 <c:forEach var="i" begin="0" end="${AllPerson.size()-1}">
     <li>${AllPerson.get(i).name}:${AllPerson.get(i).dog.name}</li>
 </c:forEach>
@@ -66,6 +72,7 @@
     request.setAttribute("str",str);
 %>
 <%--todo 8 : use c:forToken to print all words --%>
+<h5> c:forEach loog to print all words</h5>
 <c:forTokens items="${str}" delims=":-" var="i">
     <li>${i}</li>
 </c:forTokens>
