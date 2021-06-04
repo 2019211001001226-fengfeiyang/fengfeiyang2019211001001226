@@ -3,12 +3,15 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-
+    <listener>
+        <listener-class>com.fengfeiyang.week6.demo.JDBCServletContextListener</listener-class>
+    </listener>
     <servlet>
 
         <servlet-name>updateUser</servlet-name>
         <jsp-file>/WEB-INF/views/updateUser.jsp</jsp-file>
     </servlet>
+
     <servlet-mapping>
 
         <servlet-name>updateUser</servlet-name>
@@ -19,14 +22,17 @@
         <servlet-name>fengfeiyang</servlet-name>
         <servlet-class>com.fengfeiyang.week2.demo.HelloWorldServlet</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>LifeCycleServlet</servlet-name>
         <servlet-class>com.fengfeiyang.week3.demo.LifeCycleServlet</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>com.fengfeiyang.week3.demo.RegisterServlet</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>ConfigDemoServlet</servlet-name>
         <servlet-class>com.fengfeiyang.week4.demo.ConfigDemoServlet</servlet-class>
@@ -39,38 +45,47 @@
         <servlet-name>ConfigDemoServlet</servlet-name>
         <url-pattern>/Config</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>fengfeiyang</servlet-name>
         <url-pattern>/hello</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>LifeCycleServlet</servlet-name>
         <url-pattern>/life</url-pattern>
     </servlet-mapping>
+
     <servlet-mapping>
         <servlet-name>RegisterServlet</servlet-name>
         <url-pattern>/register</url-pattern>
     </servlet-mapping>
+
     <context-param>
         <param-name>name</param-name>
         <param-value>fenfeiyang</param-value>
     </context-param>
+
     <context-param>
         <param-name>student-id</param-name>
         <param-value>2019211001001226</param-value>
     </context-param>
+
     <context-param>
         <param-name>driver</param-name>
         <param-value>com.microsoft.sqlserver.jdbc.SQLServerDriver</param-value>
     </context-param>
+
     <context-param>
         <param-name>url</param-name>
         <param-value>jdbc:sqlserver://localhost:1433;DatabaseName=userdb</param-value>
     </context-param>
+
     <context-param>
         <param-name>Username</param-name>
         <param-value>sa</param-value>
     </context-param>
+
     <context-param>
         <param-name>Password</param-name>
         <param-value>123456</param-value>
