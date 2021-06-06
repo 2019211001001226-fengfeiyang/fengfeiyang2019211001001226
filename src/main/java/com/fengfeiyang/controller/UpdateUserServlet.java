@@ -46,6 +46,7 @@ public class UpdateUserServlet extends HttpServlet {
             session.setAttribute("user",usera);
             if(update!=0) {
                 request.setAttribute("message","UpdateUser successful!!!");
+                request.getRequestDispatcher("accountDetails").forward(request, response);
             } else {
                 request.setAttribute("message","UpdateUser failed!!!");
             }
