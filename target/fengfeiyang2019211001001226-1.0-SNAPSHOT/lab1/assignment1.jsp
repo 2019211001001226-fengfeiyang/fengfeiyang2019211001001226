@@ -40,7 +40,7 @@
     pageContext.setAttribute("words", words);
 %>
 <%-- todo 4 : use c:forEach to print all elements of array --%>
-<h1> c:forEach loog to print all elements of array</h1>
+<h2> c:forEach loog to print all elements of array</h2>
 <c:forEach var="i" begin="0" end="9">
     <li>${words[i]}</li>
 </c:forEach>
