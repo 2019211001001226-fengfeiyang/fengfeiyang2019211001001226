@@ -17,7 +17,7 @@ urlPatterns = {"/lab2/validation.jsp","/lab2/welcome.jsp"}
 public class LoginFilter implements Filter {
 
         @Override
-        public void init(FilterConfig filterConfig) throws ServletException {
+         public void init(FilterConfig filterConfig) throws ServletException {
             System.out.println("I am in HelloFilter-->init()");
         }
 

@@ -7,7 +7,7 @@ import java.io.IOException;
 @WebFilter(filterName = "YourNameFilter")
 public class FeiyangFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
-    }
+     }
 
     public void destroy() {
     }
