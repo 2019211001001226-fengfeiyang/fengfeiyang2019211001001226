@@ -1,7 +1,9 @@
 package com.fengfeiyang.controller;
 
 import com.fengfeiyang.dao.OrderDao;
-import com.fengfeiyang.model.Item;
+import com.fengfeiyang.model.Order;
+import com.fengfeiyang.model.Payment;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,25 +13,23 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.List;
 
-@WebServlet(name = "OrderDetailsServlet", value = "/orderDetails")
-public class OrderDetailsServlet extends HttpServlet {
+@WebServlet(name = "AdminOrderListServlet", value = "/admin/orderList")
+public class AdminOrderListServlet extends HttpServlet {
     Connection con=null;
     public void init() throws ServletException {
         con=(Connection)getServletContext().getAttribute("dbConn");
     }
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request, response);
+        doGet(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int orderId=request.getParameter("orderId")!=null?
-                Integer.parseInt(request.getParameter("orderId")):0;
-        System.out.println("orderId:"+orderId);
-        OrderDao dao=new OrderDao();
-        List<Item> items=dao.findItemsByOrderId(con,orderId);
-        System.out.println(items.size());
-        request.setAttribute("itemList",items);
-        String path="orderDetails.jsp";
+        List<Payment> paymentTypeList=Payment.findAllPayment(con);
+        request.setAttribute("paymentTypeList",paymentTypeList);
+        OrderDao orderDao=new OrderDao();
+        List<Order> orderList=orderDao.findAll(con);
+        request.setAttribute("orderList",orderList);
+        String path="/WEB-INF/views/admin/orderList.jsp";
         request.getRequestDispatcher(path).forward(request,response);
     }
 }

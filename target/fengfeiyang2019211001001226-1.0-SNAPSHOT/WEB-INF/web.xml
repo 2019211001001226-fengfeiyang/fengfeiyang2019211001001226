@@ -94,11 +94,11 @@
         <welcome-file>home</welcome-file>
     </welcome-file-list>
     <filter>
-        <filter-name>JMYFilter</filter-name>
+        <filter-name>feiyangFilterFilter</filter-name>
         <filter-class>com.lab2.FeiyangFilter</filter-class>
     </filter>
     <filter-mapping>
-        <filter-name>JMYFilter</filter-name>
+        <filter-name>feiyangFilterFilter</filter-name>
         <url-pattern>/lab2/welcome.jsp</url-pattern>
     </filter-mapping>
 </web-app>

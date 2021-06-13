@@ -108,9 +108,9 @@ public class OrderDao implements IOrderDao {
 			ResultSet	rs = st.executeQuery();
 			while(rs.next()){
 				Order o=new Order();
-				o.setOrderId(rs.getInt("Orderld"));
-				o.setCustomerId(rs.getInt("Customerld"));
-				o.setPaymentId(rs.getInt("Paymentld"));
+				o.setOrderId(rs.getInt("OrderId"));
+				o.setCustomerId(rs.getInt("CustomerId"));
+				o.setPaymentId(rs.getInt("PaymentId"));
 				o.setOrderDate(rs.getTimestamp("OrderDate"));
 				o.setFirstName(rs.getString("FirstName"));
 				o.setLastName(rs.getString("LastName"));
@@ -137,7 +137,7 @@ public class OrderDao implements IOrderDao {
 	}
 	@Override
 	public List<Order> findByUserId(Connection con,Object CustomerID) {
-		return findByProperty(con,"Customerld", CustomerID);
+		return findByProperty(con,"CustomerId", CustomerID);
 	}
 
 	@Override
@@ -195,9 +195,9 @@ public class OrderDao implements IOrderDao {
 			ResultSet	rs = st.executeQuery();
 			while(rs.next()){
 				Order o=new Order();
-				o.setOrderId(rs.getInt("Orderld"));
-				o.setCustomerId(rs.getInt("Customerld"));
-				o.setPaymentId(rs.getInt("Paymentld"));
+				o.setOrderId(rs.getInt("OrderId"));
+				o.setCustomerId(rs.getInt("CustomerId"));
+				o.setPaymentId(rs.getInt("PaymentId"));
 				o.setOrderDate(rs.getTimestamp("OrderDate"));
 				o.setFirstName(rs.getString("FirstName"));
 				o.setLastName(rs.getString("LastName"));
@@ -227,7 +227,7 @@ public class OrderDao implements IOrderDao {
 	public List<Item> findItemsByOrderId(Connection con,int orderId) {
 		List<Item> itemList=new ArrayList<Item>();
 		try {
-			String sql="SELECT 	* FROM orderdetail AS o INNER JOIN product AS p ON o.ProductId=p.Productld WHERE o.OrderId="+orderId;
+			String sql="SELECT 	* FROM orderdetail AS o INNER JOIN product AS p ON o.ProductId=p.ProductId WHERE o.OrderId="+orderId;
 			ResultSet rs=con.createStatement().executeQuery(sql);
 			while(rs.next()){
 				Item i=new Item();

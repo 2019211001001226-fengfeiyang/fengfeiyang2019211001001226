@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ page import="com.fengfeiyang.model.User" %>
 <%@ page import="java.net.CookieHandler" %>
@@ -10,7 +9,6 @@
     }
 --%>
 <%
-
     if(!(request.getAttribute("message") == null)) {
         out.println(request.getAttribute("message"));
     }

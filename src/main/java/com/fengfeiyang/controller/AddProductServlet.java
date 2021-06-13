@@ -37,7 +37,7 @@ public class AddProductServlet extends HttpServlet {
         String productName = request.getParameter("productName");
         double price = request.getParameter("price")!=null ? Double.parseDouble(request.getParameter("price")) : 0.0;
         int categoryId = request.getParameter("categoryId")!=null ? Integer.parseInt(request.getParameter("categoryId")) : 0;
-        categoryId += 28;//
+        categoryId += 1;//
         String productDescription = request.getParameter("productDescription");
 
         InputStream inputStream = null;
